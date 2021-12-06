@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>WSL LaTeX (pdflatex)</name>
+    <id>3x12aq.wsl_pdf_latex</id>
+    <!--
+    <dependency type="executable" location="path">wsl.exe</dependency>
+    <dependency type="executable" location="path">wsl_pdflatex.py</dependency>
+    -->
+	<param name="formule" type="string" gui-text="LaTeX input:">\(\displaystyle\frac{\pi^2}{6}=\lim_{n \to \infty}\sum_{k=1}^n \frac{1}{k^2}\)</param>
+        <param name="packages" type="string" gui-text="Additional packages (comma-separated):"></param>
+    <effect>
+    <object-type>all</object-type>
+      <effects-menu>
+       <submenu name="Render">
+          <submenu name="Mathematics" />
+        </submenu>
+      </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="python">wsl_pdflatex.py</command>
+    </script>
+</inkscape-extension>
+
